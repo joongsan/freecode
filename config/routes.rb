@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#homepage'
   get '/home/index', as: :user_root
+  get '/home/index2', as: :patient_root
   post '/home/write' => 'home#write'
   get '/home/new' => 'home#new'
   get '/destroy/:id' => 'home#destroy'

@@ -1,0 +1,20 @@
+<h1>환자</h1>
+<div class="container">
+<% unless patient_signed_in? %>
+<a href ="/patients/sign_in">로그인</a>
+<a href ="/patients/sign_up">회원가입</a>
+<%else%>
+<%= current_patient.email %>
+<a href ="/patients/sign_out">로그아웃</a>
+<%end%>
+    <a href="/home/new">글작성하기</a>
+    <div>
+    <% @post.each do |p| %>
+        <div>
+            <p> <%= p.title %>
+            <br><%= p.content %>
+        </div>
+        <a href="/destroy/<%= p.id %>">Delete</a> <br> <a href="/edit/<%= p.id %>">Edit</a></p>
+    <%end%>
+    </div>
+</div>

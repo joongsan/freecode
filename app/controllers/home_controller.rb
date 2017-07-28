@@ -3,6 +3,10 @@ class HomeController < ApplicationController
     @post = Post.all
   end
   
+  def index2
+    @post = Post.all
+  end
+  
   def new
     
   end
