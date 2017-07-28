@@ -1,0 +1,15 @@
+<% unless user_signed_in? %>
+<a href ="/users/sign_in">로그인</a>
+<a href ="/users/sign_up">회원가입</a>
+<%else%>
+<%= current_user.email %>
+<a href ="/users/sign_out">로그아웃</a>
+<%end%>
+<div class="container">
+<% unless patient_signed_in? %>
+<a href ="/patient/sign_in">로그인</a>
+<a href ="/patient/sign_up">회원가입</a>
+<%else%>
+<%= current_patient.email %>
+<a href ="/patient/sign_out">로그아웃</a>
+<%end%>
