@@ -7,14 +7,14 @@
 <%= current_patient.email %>
 <a href ="/patients/sign_out">로그아웃</a>
 <%end%>
-    <a href="/home/new">글작성하기</a>
+    <a href="/home/new2">글작성하기</a>
     <div>
-    <% @post.each do |p| %>
+    <% @post123.each do |p| %>
         <div>
-            <p> <%= p.title %>
-            <br><%= p.content %>
+            <p> <%= p.title2 %>
+            <br><%= p.content2 %>
         </div>
-        <a href="/destroy/<%= p.id %>">Delete</a> <br> <a href="/edit/<%= p.id %>">Edit</a></p>
+        <a href="/destroy2/<%= p.id %>">Delete</a> <br> <a href="/edit2/<%= p.id %>">Edit</a></p>
     <%end%>
     </div>
 </div>

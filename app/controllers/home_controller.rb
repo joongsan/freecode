@@ -4,11 +4,23 @@ class HomeController < ApplicationController
   end
   
   def index2
-    @post = Post.all
+    @post123 = Posttest.all
   end
   
   def new
     
+  end
+  
+  def new2
+    
+  end
+  
+  def write2
+    post = Posttest.new
+    post.title2 = params[:title2]
+    post.content2 = params[:content2]
+    post.save
+    redirect_to '/home/index2'
   end
   
   def write
@@ -25,8 +37,18 @@ class HomeController < ApplicationController
     redirect_to '/home/index'
   end
   
+  def destroy2
+    delete = Posttest.find(params[:id])
+    delete.delete
+    redirect_to '/home/index2'
+  end
+  
   def edit
     @edit = Post.find(params[:id])
+  end
+  
+  def edit2
+    @edit123 = Posttest.find(params[:id])
   end
   
   def update
@@ -36,6 +58,15 @@ class HomeController < ApplicationController
     update.save
     
     redirect_to '/home/index'
+  end
+  
+  def update2
+    update = Posttest.find(params[:id])
+    update.title2 = params[:title2]
+    update.content2 = params[:content2]
+    update.save
+    
+    redirect_to '/home/index2'
   end
   
 end
